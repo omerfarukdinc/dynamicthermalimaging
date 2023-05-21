@@ -14,7 +14,7 @@ import os
 from pathlib import Path
 import pandas as pd
 from scipy.signal import chirp, find_peaks, peak_widths
-x_1pixel=0.188301
+x_1pixel=0.188301 #Pixel Size in real world
 y_1pixel=0.184881
 def fwhm(y):
     peaks,_=find_peaks(y)
@@ -51,7 +51,7 @@ def fwhm_veriler(path):
     for i in range(len(given_liste)):
         
         tumor_fare=cv2.imread(str(given_liste[i]),0)
-        tumor_fare=tumor_fare[190:250,348-30:348+35]#[171:232,247:315]200:250,348-30:348+25
+        tumor_fare=tumor_fare[190:250,348-30:348+35]#[171:232,247:315]200:250,348-30:348+25 #Region of interest of thermal image
         
         koordinat_hot,value_hot=find_max_pixel(tumor_fare)
         x_1=koordinat_hot[0][0]
