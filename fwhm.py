@@ -2,7 +2,7 @@
 """
 Created on Tue Jan  3 15:51:26 2023
 
-@author: EXCALIBUR
+@author: OmerFarukDinc
 """
 
 import cv2
@@ -110,49 +110,3 @@ def fwhm_veriler(path):
     given_Series_xy = pd.Series(fwhm_liste_xy,dtype='float',name="FWHM_xy")
     given_Data = pd.concat([given_Series_x,given_Series_y,Path_Series,given_peaks_y,given_peaks_x,given_peaks_xy,given_peaks_yx,given_Series_yx,given_Series_xy],axis=1)
     return given_Data 
-# qq=cv2.imread(r"D:\Akademik dosyalar\thermal_heterojen_calisma\melanin\karaciger\1_22\tumor3_1_2\0001.tiff",0)
-# bb=qq[190:250,348-30:348+35]#[30:83,263:312]
-# # ###Çalış brom
-# def max_min(array):
-    
-#     peaks_1=np.vstack((array["Peaks_x"]-np.min(array["Peaks_x"]),array["Peaks_y"]-np.min(array["Peaks_x"]),array["Peaks_xy"]-np.min(array["Peaks_x"]),array["Peaks_yx"]-np.min(array["Peaks_x"])))
-#     peaks_1=peaks_1.flatten()
-#     return peaks_1
-
-# yasayan_tumorlu_1=fwhm_veriler(r"D:\Akademik dosyalar\thermal_heterojen_calisma\melanin\karaciger\1_22\tumor3_1_2")
-# abc=max_min(yasayan_tumorlu_1)
-
-# yasayan_temiz_1=fwhm_veriler(r"D:\Akademik dosyalar\thermal_heterojen_calisma\1340nm_MDR2_canli_omer\1340nm_MDR2_canli_omer\karaciger\13-203\2")
-# x_time=np.arange(0,24)
-# y_time=np.arange(0,24)
-# uzun_signal=yasayan_tumorlu_1["FWHM_x"]
-# uzun_signal=np.asarray(uzun_signal)
-# uzun_signal_tumor=np.vstack((yasayan_tumorlu_1["FWHM_x"],yasayan_tumorlu_1["FWHM_y"],yasayan_tumorlu_1["FWHM_xy"],yasayan_tumorlu_1["FWHM_yx"]))
-# uzun_signal_normal=np.vstack((yasayan_temiz_1["FWHM_x"],yasayan_temiz_1["FWHM_y"],yasayan_temiz_1["FWHM_xy"],yasayan_temiz_1["FWHM_yx"]))
-# uzun_signal_tumor_peak=np.vstack((yasayan_tumorlu_1["Peaks_x"],yasayan_tumorlu_1["Peaks_y"],yasayan_tumorlu_1["Peaks_xy"],yasayan_tumorlu_1["Peaks_yx"]))
-# uzun_signal_normal_peak=np.vstack((yasayan_temiz_1["Peaks_x"],yasayan_temiz_1["Peaks_y"],yasayan_temiz_1["Peaks_xy"],yasayan_temiz_1["Peaks_yx"]))
-
-# plt.figure(1)
-# plt.title("tumorlu_21_ort")
-# plt.plot(x_time,yasayan_tumorlu_1["FWHM_x"],label="Peak_values")
-# plt.legend()
-
-# plt.figure(2)
-# plt.title("temiz_21_ort")
-# plt.plot(y_time,yasayan_temiz_1["FWHM_x"],label="Peak_values")
-# plt.legend()
-
-# ##
-# dif_tumorlu=yasayan_tumorlu_1["FWHM_x"]-yasayan_tumorlu_1["FWHM_y"]
-# dif_tumorlu_xy=yasayan_tumorlu_1["FWHM_xy"]-yasayan_tumorlu_1["FWHM_yx"]
-
-# dif_saglikli=yasayan_temiz_1["FWHM_x"]-yasayan_temiz_1["FWHM_y"]
-# dif_saglikli_xy=yasayan_temiz_1["FWHM_xy"]-yasayan_temiz_1["FWHM_yx"]
-# dif_tumor_xy_mean=np.mean(dif_tumorlu_xy)
-# dif_temiz_xy_mean=np.mean(dif_saglikli_xy)
-# dif_tumor_mean=np.mean(dif_tumorlu)
-# dif_temiz_mean=np.mean(dif_saglikli)
-# print(f"Tümorlu mean:{dif_tumor_mean}")
-# print(f"Temiz mean:{dif_temiz_mean}")
-# print(f"Tümorlu mean xy:{dif_tumor_xy_mean}")
-# print(f"Temiz mean xy:{dif_temiz_xy_mean}")
