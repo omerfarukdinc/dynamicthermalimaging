@@ -1,2 +1,2 @@
 # dynamicthermalimaging
-This study presents an artificial intelligence algorithm to classify the heterogeneity and homogeneity of ex vivo mouse liver tumor phantom using dynamic thermal imaging.
+This study presents an artificial intelligence algorithm to classify the heterogeneity and homogeneity of ex vivo mouse liver tumor phantom using dynamic thermal imaging. In the FWHM.py file can calculate Full width half maximum of thermal image.
